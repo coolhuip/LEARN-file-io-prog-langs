@@ -115,9 +115,23 @@ with open('test.txt', 'r') as f8:
     print(f8.read(size_to_read))
 
 
-# 
+# The 'w' modifier (if file already exists) will wipe out the existing content
+# and overwrite from char-pos 0.
+#     -> To prevent this, use the 'a' modifier, instead.
 with open('test2.txt', 'w') as f9:
     f9.write('Test')
+    f9.write('Test_')
+    f9.seek(0)
+    f9.write('777')
+    f9.seek(10)
+    f9.write('\n  bruh')
+
+
+# Read + Write on multiple files at the same time.
+with open('test.txt', 'r') as rf:
+    with open('test3.txt', 'w') as wf:
+        for line in rf.readlines():
+            wf.write(line)
 
 
 
