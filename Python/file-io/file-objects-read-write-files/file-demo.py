@@ -127,11 +127,18 @@ with open('test2.txt', 'w') as f9:
     f9.write('\n  bruh')
 
 
-# Read + Write on multiple files at the same time.
+# Read + Write on multiple files at the same time (i.e., copy files).
 with open('test.txt', 'r') as rf:
     with open('test3.txt', 'w') as wf:
         for line in rf.readlines():
             wf.write(line)
+        # OR, we can read line-by-line without calling rf.readlines()
+        rf.seek(1), wf.seek(10)
+        for line in rf:
+            wf.write(line)
+
+
+# Finally, let's copy a large .JPG image instead of a text file.
 
 
 
