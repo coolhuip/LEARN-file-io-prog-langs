@@ -10,8 +10,8 @@ r = read
 w = write
 a = append
 r+ = read + write
-w+ = 
-a+ = 
+w+ = read + write (truncate)
+a+ = read + append
 
 NOTE:
 my_file.seek( n )  =>  Move the cursor to the n-th char position
