@@ -1,13 +1,11 @@
-# File Objects
-
-print("========================")
-print()
-###############################################################################
-
-
-
 """
-open( 'directory/file.extension' , 'r|w|a|r+|w+|a+' )
+Python Tutorial: File Objects - Reading and Writing to Files
+https://www.youtube.com/watch?v=Uh2ebFW8OYM&ab_channel=CoreySchafer
+
+NOTE:
+my_file = open( 'directory/file.extension' , 'r|w|a|r+|w+|a+' )
+
+NOTE:
 r = read
 w = write
 a = append
@@ -15,8 +13,22 @@ r+ = read + write
 w+ = 
 a+ = 
 
-NOTE: When read() reaches EOF, it returns an empty string.
+NOTE:
+my_file.seek( n )  =>  Move the cursor to the n-th char position
+                       in the file (starts from 0).
+
+my_file.tell() => Return the current char position.
+
+NOTE:
+When read() reaches EOF, it returns an empty string.
 """
+from __future__ import annotations
+
+
+print("=====================================================================")
+print()
+
+
 # This is NOT a good way to handle files.
 f1 = open('test.txt', 'r')
 print(f1.name)
@@ -79,7 +91,7 @@ with open('test.txt', 'r') as f6:
 # Read by char count (MORE CONTROL)
 print()
 with open('test.txt', 'r') as f7:
-    size_to_read = 10
+    size_to_read = 3
 
     f7_contents = f7.read(size_to_read)
     while len(f7_contents):
@@ -87,10 +99,9 @@ with open('test.txt', 'r') as f7:
         f7_contents = f7.read(size_to_read)
         
 
+# TODO: Continue video from 12:40
 
 
 
 
-
-###############################################################################
-print("========================")
+print("=====================================================================")
