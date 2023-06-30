@@ -2,6 +2,7 @@
 Python Tutorial: File Objects - Reading and Writing to Files
 https://www.youtube.com/watch?v=Uh2ebFW8OYM&ab_channel=CoreySchafer
 
+
 NOTE:
 my_file = open( 'directory/file.extension' , 'r|w|a|r+|w+|a+' )
 
@@ -23,6 +24,7 @@ NOTE:
 When read(), readlines(), or readline() reaches EOF,
 it returns an empty string.
 """
+
 from __future__ import annotations
 
 
