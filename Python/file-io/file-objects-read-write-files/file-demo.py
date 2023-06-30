@@ -100,9 +100,26 @@ with open('test.txt', 'r') as f7:
     while len(f7_contents):
         print(f7_contents, end='_')
         f7_contents = f7.read(size_to_read)
-        
+    
 
-# TODO: Continue video from 12:40
+# Adjust the file pointer/cursor via seek()
+print()
+with open('test.txt', 'r') as f8:
+    size_to_read = 20
+    print(f8.read(size_to_read), end='')
+    # Now, go back to char position 0 and read 19 characters.
+    f8.seek(0)
+    print(f8.read(size_to_read), end='')
+    # Now, go back to char position 1 and read 19 characters.
+    f8.seek(1)
+    print(f8.read(size_to_read))
+
+
+# 
+with open('test2.txt', 'w') as f9:
+    f9.write('Test')
+
+
 
 
 
