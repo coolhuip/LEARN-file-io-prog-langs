@@ -20,7 +20,8 @@ my_file.seek( n )  =>  Move the cursor to the n-th char position
 my_file.tell() => Return the current char position.
 
 NOTE:
-When read() reaches EOF, it returns an empty string.
+When read(), readlines(), or readline() reaches EOF,
+it returns an empty string.
 """
 from __future__ import annotations
 
