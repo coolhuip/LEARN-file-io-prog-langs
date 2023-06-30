@@ -118,6 +118,7 @@ with open('test.txt', 'r') as f8:
 # The 'w' modifier (if file already exists) will wipe out the existing content
 # and overwrite from char-pos 0.
 #     -> To prevent this, use the 'a' modifier, instead.
+print()
 with open('test2.txt', 'w') as f9:
     f9.write('Test')
     f9.write('Test_')
@@ -139,10 +140,22 @@ with open('test.txt', 'r') as rf:
 
 
 # Finally, let's copy a large .JPG image instead of a text file.
+with open('rasta-banana.jpg', 'rb') as rf:
+    with open('rasta-banana_COPY.jpg', 'wb') as wf:
+        chunk_size = 9000
+        rf_chunk = rf.read(chunk_size)
+        wf.write(rf_chunk)
 
 
-
-
+# Oops! We only copied the first 9 kilobytes of our original img there...
+# Now, let's do it right & copy the whole thing.
+with open('rasta-banana.jpg', 'rb') as rf:
+    with open('rasta-banana_COPY_2.jpg', 'wb') as wf:
+        chunk_size = 4096
+        rf_chunk = rf.read(chunk_size)
+        while len(rf_chunk):
+            wf.write(rf_chunk)
+            rf_chunk = rf.read(chunk_size)
 
 
 print("=====================================================================")
